@@ -1,0 +1,422 @@
+# Instincts generated from https://github.com/JamesWilliam1977/skyvern
+# Generated: 2026-04-29T07:52:36.409Z
+# Version: 2.0
+# NOTE: This file supplements (does not replace) any existing curated instincts.
+# High-confidence manually curated instincts should be preserved alongside these.
+
+---
+id: skyvern-commit-conventional
+trigger: "when writing a commit message"
+confidence: 0.85
+domain: git
+source: repo-analysis
+source_repo: https://github.com/JamesWilliam1977/skyvern
+---
+
+# Skyvern Commit Conventional
+
+## Action
+
+Use conventional commit format with prefixes: fix, feat
+
+## Evidence
+
+- 6 commits analyzed
+- Detected conventional commit pattern
+- Examples: feat(SKY-9328): forward live debug session id into copilot chat (frontend) (#5711), fix(SKY-6790): truncate long block titles with ellipsis and tooltip (#5714)
+
+---
+id: skyvern-commit-length
+trigger: "when writing a commit message"
+confidence: 0.6
+domain: git
+source: repo-analysis
+source_repo: https://github.com/JamesWilliam1977/skyvern
+---
+
+# Skyvern Commit Length
+
+## Action
+
+Write moderate-length commit messages (~83 characters)
+
+## Evidence
+
+- Average commit message length: 83 chars
+- Based on 6 commits
+
+---
+id: skyvern-naming-files
+trigger: "when creating a new file"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/JamesWilliam1977/skyvern
+---
+
+# Skyvern Naming Files
+
+## Action
+
+Use snake_case naming convention
+
+## Evidence
+
+- Analyzed file naming patterns in repository
+- Dominant pattern: snake_case
+
+---
+id: skyvern-import-alias
+trigger: "when importing modules"
+confidence: 0.85
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/JamesWilliam1977/skyvern
+---
+
+# Skyvern Import Alias
+
+## Action
+
+Use path aliases (@/, ~/) instead of relative imports
+
+## Evidence
+
+- Import analysis shows alias pattern
+- Example: import { x } from '@/lib/x'
+
+---
+id: skyvern-export-style
+trigger: "when exporting from a module"
+confidence: 0.7
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/JamesWilliam1977/skyvern
+---
+
+# Skyvern Export Style
+
+## Action
+
+Prefer named exports
+
+## Evidence
+
+- Export pattern analysis
+- Dominant style: named
+
+---
+id: skyvern-test-separate
+trigger: "when writing tests"
+confidence: 0.8
+domain: testing
+source: repo-analysis
+source_repo: https://github.com/JamesWilliam1977/skyvern
+---
+
+# Skyvern Test Separate
+
+## Action
+
+Place tests in the tests/ or __tests__/ directory, mirroring src structure
+
+## Evidence
+
+- Separate test directory pattern detected
+- Tests live in dedicated test folders
+
+---
+id: skyvern-test-naming
+trigger: "when creating a test file"
+confidence: 0.85
+domain: testing
+source: repo-analysis
+source_repo: https://github.com/JamesWilliam1977/skyvern
+---
+
+# Skyvern Test Naming
+
+## Action
+
+Name test files using the pattern: *.test.ts
+
+## Evidence
+
+- File pattern: *.test.ts
+- Consistent across test files
+
+---
+id: skyvern-workflow-feature-or-bugfix-with-unit-tests
+trigger: "when doing feature or bugfix with unit tests"
+confidence: 0.65
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/JamesWilliam1977/skyvern
+---
+
+# Skyvern Workflow Feature Or Bugfix With Unit Tests
+
+## Action
+
+Follow the feature-or-bugfix-with-unit-tests workflow:
+1. Modify or add backend implementation files (e.g., Python modules in skyvern/cli, skyvern/forge, skyvern/)
+2. Add or update corresponding unit test files in tests/unit/
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~3x per month
+- Files: skyvern/cli/mcp_tools/__init__.py, skyvern/cli/commands/__init__.py, skyvern/cli/mcp_tools/_validation.py
+
+---
+id: skyvern-instinct-file-naming
+trigger: "When creating a new Python file"
+confidence: 0.9
+domain: code-style
+source: repo-analysis
+source_repo: JamesWilliam1977/skyvern
+---
+
+# Skyvern Instinct File Naming
+
+## Action
+
+Name the file using snake_case
+
+## Evidence
+
+- Pattern in namingConventions.files: snake_case
+
+---
+id: skyvern-instinct-function-naming
+trigger: "When defining a new function"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: JamesWilliam1977/skyvern
+---
+
+# Skyvern Instinct Function Naming
+
+## Action
+
+Name the function using camelCase
+
+## Evidence
+
+- Pattern in namingConventions.functions: camelCase
+
+---
+id: skyvern-instinct-class-naming
+trigger: "When defining a new class"
+confidence: 0.9
+domain: code-style
+source: repo-analysis
+source_repo: JamesWilliam1977/skyvern
+---
+
+# Skyvern Instinct Class Naming
+
+## Action
+
+Name the class using PascalCase
+
+## Evidence
+
+- Pattern in namingConventions.classes: PascalCase
+
+---
+id: skyvern-instinct-constant-naming
+trigger: "When defining a constant"
+confidence: 0.9
+domain: code-style
+source: repo-analysis
+source_repo: JamesWilliam1977/skyvern
+---
+
+# Skyvern Instinct Constant Naming
+
+## Action
+
+Name the constant using SCREAMING_SNAKE_CASE
+
+## Evidence
+
+- Pattern in namingConventions.constants: SCREAMING_SNAKE_CASE
+
+---
+id: skyvern-instinct-import-alias
+trigger: "When importing modules"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: JamesWilliam1977/skyvern
+---
+
+# Skyvern Instinct Import Alias
+
+## Action
+
+Use alias style for imports
+
+## Evidence
+
+- Pattern in importStyle: alias
+
+---
+id: skyvern-instinct-named-export
+trigger: "When exporting functions or classes"
+confidence: 0.7
+domain: code-style
+source: repo-analysis
+source_repo: JamesWilliam1977/skyvern
+---
+
+# Skyvern Instinct Named Export
+
+## Action
+
+Use named exports
+
+## Evidence
+
+- Pattern in exportStyle: named
+
+---
+id: skyvern-instinct-unit-test-location
+trigger: "When adding or updating unit tests"
+confidence: 0.9
+domain: testing
+source: repo-analysis
+source_repo: JamesWilliam1977/skyvern
+---
+
+# Skyvern Instinct Unit Test Location
+
+## Action
+
+Place unit tests in the tests/unit/ directory
+
+## Evidence
+
+- Pattern in architecture.testLocation: separate
+- Files in tests/unit/
+
+---
+id: skyvern-instinct-test-file-pattern
+trigger: "When naming a test file for TypeScript code"
+confidence: 0.8
+domain: testing
+source: repo-analysis
+source_repo: JamesWilliam1977/skyvern
+---
+
+# Skyvern Instinct Test File Pattern
+
+## Action
+
+Use the *.test.ts file pattern
+
+## Evidence
+
+- Pattern in testing.filePattern: *.test.ts
+
+---
+id: skyvern-instinct-unit-test-type
+trigger: "When writing tests"
+confidence: 0.8
+domain: testing
+source: repo-analysis
+source_repo: JamesWilliam1977/skyvern
+---
+
+# Skyvern Instinct Unit Test Type
+
+## Action
+
+Write unit tests
+
+## Evidence
+
+- Pattern in testing.testTypes: unit
+
+---
+id: skyvern-instinct-commit-format-conventional
+trigger: "When writing a commit message"
+confidence: 0.9
+domain: git
+source: repo-analysis
+source_repo: JamesWilliam1977/skyvern
+---
+
+# Skyvern Instinct Commit Format Conventional
+
+## Action
+
+Use the Conventional Commits format with a type prefix (e.g., feat, fix)
+
+## Evidence
+
+- Pattern in commits.type: conventional
+- Examples: 'feat(SKY-9328): ...', 'fix(SKY-6790): ...'
+
+---
+id: skyvern-instinct-commit-prefix
+trigger: "When describing a new feature or bugfix in a commit"
+confidence: 0.9
+domain: git
+source: repo-analysis
+source_repo: JamesWilliam1977/skyvern
+---
+
+# Skyvern Instinct Commit Prefix
+
+## Action
+
+Start the commit message with 'feat' for features and 'fix' for bugfixes
+
+## Evidence
+
+- Pattern in commits.prefixes: ["fix", "feat"]
+- Examples in commit messages
+
+---
+id: skyvern-instinct-commit-length
+trigger: "When writing a commit message"
+confidence: 0.7
+domain: git
+source: repo-analysis
+source_repo: JamesWilliam1977/skyvern
+---
+
+# Skyvern Instinct Commit Length
+
+## Action
+
+Aim for a commit message length around 80-85 characters
+
+## Evidence
+
+- Pattern in commits.averageLength: 83
+
+---
+id: skyvern-instinct-feature-bugfix-with-tests
+trigger: "When adding a new backend feature or fixing a bug"
+confidence: 0.9
+domain: workflow
+source: repo-analysis
+source_repo: JamesWilliam1977/skyvern
+---
+
+# Skyvern Instinct Feature Bugfix With Tests
+
+## Action
+
+Modify or add backend implementation files and add or update corresponding unit test files in tests/unit/
+
+## Evidence
+
+- Workflow: feature-or-bugfix-with-unit-tests
+- Files involved: skyvern/cli/*, skyvern/forge/*, tests/unit/*
+- Commit sequence and examples
+
